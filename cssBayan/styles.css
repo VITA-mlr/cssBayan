@@ -1,0 +1,99 @@
+:root {
+  --background-color: #ede7bb;
+  --background-color-card: #8c959f;
+  --text-dark-color: #24292f;
+  --text-light-color: #f6f8fa;
+  --text-active-color: #0969da;
+  --border-color: rgba(175,184,193,0.2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Chivo Mono', monospace;
+}
+
+.wrapper {
+  width: 60vw;
+  height: 100%;
+  margin: 5% auto 0;
+  padding: 50px 100px;
+  background-color: var(--background-color);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+h1 {
+  color: var(--text-dark-color);
+}
+
+section {
+  position: relative;
+  cursor: pointer;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-active-color);
+}
+
+section:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.context:hover section {
+  color: var(--text-dark-color);
+}
+
+.section_button {
+  position: absolute;
+  right: 25px;
+  top: 35px;
+  background-color: var(--text-dark-color);
+  opacity: 0;
+}
+
+.context:hover .section_button {
+  opacity: 1;
+}
+
+.section_button::before, .section_button::after {
+  width: 20px;
+  height: 3px;  
+  position: absolute;
+  background-color: var(--text-dark-color);
+  content: "";
+}
+
+.section_button::before {
+  transform: rotate(90deg);
+}
+
+.section_button::after {
+  transform: rotate(0);
+}
+
+section:hover .section_button::before {
+  transform: rotate(45deg);
+}
+
+section:hover .section_button::after {
+  transform: rotate(-45deg);
+}
+
+.section_card {
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5% 10%;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color-card);
+  color: var(--text-light-color);
+  text-align: center;
+  display: none;
+}
+
+.section_card p {
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+
+section:hover .section_card { 
+  display: block;
+}
