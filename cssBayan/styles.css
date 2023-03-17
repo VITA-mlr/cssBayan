@@ -97,3 +97,19 @@ section:hover .section_button::after {
 section:hover .section_card { 
   display: block;
 }
+
+section.active h2 {
+  color: var(--text-dark-color);
+}
+
+section.active .section_button::before {
+  transform: rotate(45deg);
+}
+
+section.active .section_button::after {
+  transform: rotate(-45deg);
+}
+
+section.active .section_card {
+  display: block;
+}

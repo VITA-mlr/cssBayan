@@ -14,41 +14,41 @@
   <div class="wrapper">
     <div class="context">
       <h1>CSS Bayan</h1>
-      <section>
+      <section id="first"  class="active">
         <h2>You can't just copy and paste CSS</h2>
-        <div class="section_button"></div>
+        <div class="section_button" onclick="document.getElementById('first').style.display='none'"></div>
         <div class="section_card">
           <p class="section_card_title">You can't just copy and paste CSS</p>
           <img src="https://liubavyshka.ru/_ph/92/2/904803311.gif?1678859514" alt="hedgehog">
         </div>
       </section>
-      <section>
+      <section id="second">
         <h2>Keep calm and carry on</h2>
-        <div class="section_button"></div>
+        <div class="section_button" onclick="document.getElementById('second').style.display='none'"></div>
         <div class="section_card">
           <p class="section_card_title">Keep calm and carry on</p>
           <img src="https://vamotkrytka.ru/_ph/34/2/653762132.jpg?1678860432" alt="hedgehog">
         </div>
       </section>
-      <section>
+      <section id="third">
         <h2>Work-life balance</h2>
-        <div class="section_button"></div>
+        <div class="section_button" onclick="document.getElementById('third').style.display='none'"></div>
         <div class="section_card">
           <p class="section_card_title">Work-life balance</p>
           <img src="https://vamotkrytka.ru/_ph/34/2/447777128.jpg?1678860305" alt="hedgehog">
         </div>
       </section>
-      <section>
+      <section id="forth">
         <h2>Dude, where is JS?</h2>
-        <div class="section_button"></div>
+        <div class="section_button" onclick="document.getElementById('forth').style.display='none'"></div>
         <div class="section_card">
           <p class="section_card_title">Dude, where is JS?</p>
           <img src="https://vamotkrytka.ru/_ph/34/2/60404363.jpg?1678860183" alt="hedgehog">
         </div>
       </section>
-      <section>
+      <section id="fifth">
         <h2>Relax and take it easy</h2>
-        <div class="section_button"></div>
+        <div class="section_button" onclick="document.getElementById('fifth').style.display='none'"></div>
         <div class="section_card">
           <p class="section_card_title">Relax and take it easy</p>
           <img src="https://vamotkrytka.ru/_ph/34/2/431368036.jpg?1678860293" alt="hedgehog">
@@ -56,5 +56,20 @@
       </section>
     </div>
   </div> 
+
+  <script>
+    function changeActiveState() {
+      const sectionsArr = document.getElementsByTagName('section');
+      for (let i=0; i<sectionsArr.length; i++) {
+        sectionsArr[i].addEventListener('click', function() {
+          const currentActive = document.getElementsByClassName('active');
+          currentActive[0].className = currentActive[0].className.replace('active', '');
+          this.className += 'active';
+        })
+      };
+    };
+
+    changeActiveState();
+  </script>
 </body>
 </html>
